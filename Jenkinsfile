@@ -19,7 +19,7 @@ sh "mvn clean install"
 }
 stage('Test') {
 steps {
-echo 'Testing..'
+echo 'Testing...'
 }
 }
 stage('Deploy') {
