@@ -11,11 +11,10 @@ checkout scm
 }
 stage('Build') {
 steps {
-if(env.BRANCH_NAME == ('master')){
   echo 'Building..'
 sh "mvn clean install"
 archiveArtifacts artifacts: '**/*.war', onlyIfSuccessful: true
-}
+
 }
 }
 stage('Test') {
