@@ -12,11 +12,10 @@ checkout scm
 stage('Build') {
 steps {
   echo 'Building..'
-  def deployable_branches = ["master"]
-if(deployable_branches.contains(env.BRANCH_NAME)) { 
+  
 sh "mvn clean install"
 archiveArtifacts artifacts: '**/*.war', onlyIfSuccessful: true
-}
+
 
 }
 }
