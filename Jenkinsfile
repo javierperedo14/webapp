@@ -12,10 +12,10 @@ checkout scm
 stage('Build') {
 steps {
   echo 'Building..'
-  
+  When { branch 'master'
 sh "mvn clean install"
 archiveArtifacts artifacts: '**/*.war', onlyIfSuccessful: true
-
+}
 
 }
 }
