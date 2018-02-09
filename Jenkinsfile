@@ -12,9 +12,10 @@ checkout scm
 stage('Build') {
 steps {
   echo 'Building..'
-if (env.BRANCH_NAME == 'master') { echo 'TESTING CURSO..'}
+if (env.BRANCH_NAME == 'master') { 
 sh "mvn clean install"
 archiveArtifacts artifacts: '**/*.war', onlyIfSuccessful: true
+}
 
 }
 }
